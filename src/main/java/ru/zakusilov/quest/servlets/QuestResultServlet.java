@@ -21,6 +21,6 @@ public class QuestResultServlet extends HttpServlet {
         ResultResolver resultResolver = new ResultResolver();
         String result = resultResolver.getResult(user.getName(), answer);
         session.setAttribute("result", result);
-        request.getServletContext().getRequestDispatcher("/4thPage.jsp").forward(request, response);
+        request.getServletContext().getRequestDispatcher("/questResult.jsp").forward(request, response);
     }
 }

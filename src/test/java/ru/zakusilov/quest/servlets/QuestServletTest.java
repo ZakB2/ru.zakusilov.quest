@@ -55,7 +55,7 @@ class QuestServletTest {
         when(session.getAttribute("questionNumber")).thenReturn(questionNumber);
 
         when(request.getServletContext()).thenReturn(servletContext);
-        when(servletContext.getRequestDispatcher("/3rdPage.jsp")).thenReturn(requestDispatcher);
+        when(servletContext.getRequestDispatcher("/quest.jsp")).thenReturn(requestDispatcher);
 
         questServlet.doGet(request, response);
 

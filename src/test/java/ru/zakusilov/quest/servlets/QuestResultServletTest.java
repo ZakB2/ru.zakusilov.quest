@@ -48,7 +48,7 @@ class QuestResultServletTest {
         when(session.getAttribute("answer")).thenReturn(answer);
 
         when(request.getServletContext()).thenReturn(servletContext);
-        when(servletContext.getRequestDispatcher("/4thPage.jsp")).thenReturn(requestDispatcher);
+        when(servletContext.getRequestDispatcher("/questResult.jsp")).thenReturn(requestDispatcher);
 
         questResultServlet.doGet(request, response);
 
@@ -60,6 +60,6 @@ class QuestResultServletTest {
         verify(session).setAttribute("result", result);
 
         verify(requestDispatcher).forward(request, response);
-        assertEquals(request.getServletContext().getRequestDispatcher("/4thPage.jsp"), requestDispatcher);
+        assertEquals(request.getServletContext().getRequestDispatcher("/questResult.jsp"), requestDispatcher);
     }
 }
