@@ -18,7 +18,7 @@
             document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     document.getElementById("buttonNext").innerHTML
-                        = '<a href="2ndPage.jsp">Далее</a>';
+                        = '<a href="greeting.jsp">Далее</a>';
                 }, 17000);
             });
         </script>

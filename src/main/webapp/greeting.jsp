@@ -33,7 +33,7 @@
         <img src="images/Леонард_Маккой.jpg" alt="Леонард_Маккой" style="width: 15%;height: 15%">
     </div>
     <div id="buttonPrevious">
-        <a href="1stPage.jsp">Назад</a>
+        <a href="introduction.jsp">Назад</a>
     </div>
 </section>
 </body>

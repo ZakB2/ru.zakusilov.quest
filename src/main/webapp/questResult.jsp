@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Quest</title>
+    <title>Quest result</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>

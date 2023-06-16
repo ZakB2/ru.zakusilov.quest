@@ -15,8 +15,8 @@
             document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     document.getElementById("button").innerHTML
-                        = '<div id="buttonYes"><a href="1stPage.jsp" class="c1">Да</a></div>' +
-                        '<div id="buttonNo"><a href="1stPage.jsp" class="c2">Нет</a></div>';
+                        = '<div id="buttonYes"><a href="introduction.jsp" class="c1">Да</a></div>' +
+                        '<div id="buttonNo"><a href="introduction.jsp" class="c2">Нет</a></div>';
                 }, 2500);
             });
         </script>
