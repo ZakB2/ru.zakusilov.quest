@@ -3,7 +3,7 @@ package ru.zakusilov.quest.resolvers;
 import ru.zakusilov.quest.Step;
 
 public abstract class Resolver {
-    private Resolver nextSuccessfulResolver;
+    private Resolver nextResolver;
     private Step step;
 
 
@@ -11,12 +11,12 @@ public abstract class Resolver {
         this.step = step;
     }
 
-    public Resolver getNextSuccessfulResolver() {
-        return nextSuccessfulResolver;
+    public Resolver getNextResolver() {
+        return nextResolver;
     }
 
-    public void setNextSuccessfulResolver(Resolver nextSuccessfulResolver) {
-        this.nextSuccessfulResolver = nextSuccessfulResolver;
+    public void setNextResolver(Resolver nextResolver) {
+        this.nextResolver = nextResolver;
     }
 
     public Step getStep() {
