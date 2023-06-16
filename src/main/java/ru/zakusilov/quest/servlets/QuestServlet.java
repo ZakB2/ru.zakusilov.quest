@@ -30,8 +30,8 @@ public class QuestServlet extends HttpServlet {
         Resolver teleportResolver = new TeleportResolver();
         Resolver tellMeAboutYourselfResolver = new TellMeAboutYourselfResolver();
 
-        ufoCallResolver.setNextSuccessfulResolver(teleportResolver);
-        teleportResolver.setNextSuccessfulResolver(tellMeAboutYourselfResolver);
+        ufoCallResolver.setNextResolver(teleportResolver);
+        teleportResolver.setNextResolver(tellMeAboutYourselfResolver);
 
         setResolver(session, questionNumber, ufoCallResolver);
         session.setAttribute("resolver", resolver);
@@ -61,13 +61,13 @@ public class QuestServlet extends HttpServlet {
             resolver = ufoCallResolver;
         } else {
             resolver = (Resolver) session.getAttribute("resolver");
-            resolver = resolver.getNextSuccessfulResolver();
+            resolver = resolver.getNextResolver();
         }
     }
 
     private void setRedirect(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws ServletException, IOException {
         if (resolver != null) {
-            request.getServletContext().getRequestDispatcher("/3rdPage.jsp").forward(request, response);
+            request.getServletContext().getRequestDispatcher("/quest.jsp").forward(request, response);
         } else {
             String answer = "true";
             session.setAttribute("answer", answer);
