@@ -6,6 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -38,6 +39,8 @@ class QuestResultServletTest {
     private Boolean answer;
 
     @Test
+    @DisplayName("Should test that a valid attributes are passed and set to the session, and that all methods " +
+            "are executed")
     void doGet_PassedValidAttribute() throws ServletException, IOException {
         questResultServlet = new QuestResultServlet();
         resultResolver = new ResultResolver();

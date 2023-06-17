@@ -6,6 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -37,7 +38,9 @@ class RestartServletTest {
     private RestartServlet restartServlet;
 
     @Test
-    void doGet_UserNameAreGotBeforeSessionInvalidation() throws ServletException, IOException {
+    @DisplayName("Should test that the username is got before the session is invalidated, and that all methods " +
+            "are executed")
+    void doGet_UserNameIsGotBeforeSessionInvalidation() throws ServletException, IOException {
         restartServlet = new RestartServlet();
 
         when(request.getSession()).thenReturn(session);
