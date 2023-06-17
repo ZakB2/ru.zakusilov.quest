@@ -39,7 +39,7 @@ public class QuestServlet extends HttpServlet {
         setRedirect(request, response, session);
     }
 
-    User getUserWithName(HttpServletRequest request, User user) {
+    User getUserByName(HttpServletRequest request, User user) {
         if (user == null) {
             String name = request.getParameter("name");
             user = new User(name);
