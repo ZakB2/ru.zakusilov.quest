@@ -48,12 +48,7 @@ public class QuestServlet extends HttpServlet {
     }
 
     Integer getQuestionNumber(Integer questionNumber) {
-        if (questionNumber == null) {
-            questionNumber = 1;
-        } else {
-            questionNumber += 1;
-        }
-        return questionNumber;
+        return questionNumber == null ? 1 : questionNumber + 1;
     }
 
     void setResolver(HttpSession session, Integer questionNumber, Resolver ufoCallResolver) {
