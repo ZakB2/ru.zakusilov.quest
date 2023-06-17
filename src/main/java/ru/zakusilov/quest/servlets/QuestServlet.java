@@ -19,7 +19,7 @@ public class QuestServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         User user = (User) session.getAttribute("user");
-        user = getUserWithName(request, user);
+        user = getUserByName(request, user);
         session.setAttribute("user", user);
 
         Integer questionNumber = (Integer) session.getAttribute("questionNumber");

@@ -61,7 +61,7 @@ class QuestServletTest {
 
         verify(session).getAttribute("user");
         assertEquals(user, session.getAttribute("user"));
-        verify(session).setAttribute("user", questServlet.getUserWithName(request, user));
+        verify(session).setAttribute("user", questServlet.getUserByName(request, user));
 
         verify(session).getAttribute("questionNumber");
         assertEquals(questionNumber, session.getAttribute("questionNumber"));
