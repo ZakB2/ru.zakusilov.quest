@@ -38,7 +38,7 @@ class QuestResultServletTest {
     private Boolean answer;
 
     @Test
-    public void doGet_PassedValidAttribute() throws ServletException, IOException {
+    void doGet_PassedValidAttribute() throws ServletException, IOException {
         questResultServlet = new QuestResultServlet();
         resultResolver = new ResultResolver();
 

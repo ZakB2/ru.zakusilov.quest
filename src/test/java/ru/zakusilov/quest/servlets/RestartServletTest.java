@@ -37,7 +37,7 @@ class RestartServletTest {
     private RestartServlet restartServlet;
 
     @Test
-    public void doGet_UserNameAreGotBeforeSessionInvalidation() throws ServletException, IOException {
+    void doGet_UserNameAreGotBeforeSessionInvalidation() throws ServletException, IOException {
         restartServlet = new RestartServlet();
 
         when(request.getSession()).thenReturn(session);
