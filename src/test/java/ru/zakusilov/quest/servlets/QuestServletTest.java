@@ -11,14 +11,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.NullSource;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import ru.zakusilov.quest.User;
-import ru.zakusilov.quest.resolvers.Resolver;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
@@ -41,7 +42,6 @@ class QuestServletTest {
     private User user;
     private QuestServlet questServlet;
     private Integer questionNumber;
-    private Resolver resolver;
 
     @BeforeEach
     void setUp() {
@@ -87,24 +87,18 @@ class QuestServletTest {
         assertEquals(expectedUser, actualUser);
     }
 
-    @ParameterizedTest(name = "Should test correct question number")
-    @NullSource
-    void getQuestionNumber_PassedNull(Integer questionNumber) {
-        int expected = 1;
+    @ParameterizedTest(name = "Should test correct question number {0}")
+    @MethodSource("provideCorrectNumberForNewQuestion")
+    void getQuestionNumber_PassedDifferentQuestionsNumbers(Integer questionNumber, Integer expected) {
         int actual = questServlet.getQuestionNumber(questionNumber);
         assertEquals(expected, actual);
     }
 
-    @ParameterizedTest(name = "Should test correct question number {0}")
-    @ValueSource(ints = {1, 2})
-    void getQuestionNumber_PassedDifferentQuestionsNumbers(Integer questionNumber) {
-        int expected = 0;
-        if (questionNumber == 1) {
-            expected = 2;
-        } else if (questionNumber == 2) {
-            expected = 3;
-        }
-        int actual = questServlet.getQuestionNumber(questionNumber);
-        assertEquals(expected, actual);
+    private static List<Arguments> provideCorrectNumberForNewQuestion() {
+        return List.of(
+                Arguments.of(null, 1),
+                Arguments.of(1, 2),
+                Arguments.of(2, 3)
+        );
     }
 }
