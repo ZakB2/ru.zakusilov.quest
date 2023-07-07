@@ -12,7 +12,7 @@ import ru.zakusilov.quest.resolvers.*;
 import java.io.IOException;
 
 public class QuestServlet extends HttpServlet {
-    private Resolver resolver;
+    private transient Resolver resolver = null;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
