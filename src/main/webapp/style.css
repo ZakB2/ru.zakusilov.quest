@@ -1,0 +1,180 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: "Droid Sans", arial, verdana, sans-serif;
+    font-weight: 700;
+    color: #ff6;
+    background-color: black;
+    overflow: hidden;
+}
+
+a:link, a:visited {
+    background-color: black;
+    border-radius: 10px/10px;
+    border-color: #ff6;
+    border-style: solid;
+    padding: 10px 10px;
+    color: #ff6;
+    text-align: center;
+    transition-duration: 800ms;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: #ff6;
+    color: black;
+}
+
+#textOnTheStartPage {
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 25%;
+    right: 25%;
+    font-size: 50px;
+    animation: letter 2.5s;
+    display: inline-block;
+}
+
+a.c1:hover, a.c1:active {
+    background-color: red;
+    border-color: red;
+}
+
+a.c2:hover, a.c2:active {
+    background-color: blue;
+    border-color: blue;
+}
+
+#buttonYes {
+    position: absolute;
+    bottom: 25%;
+    left: 25%;
+}
+
+#buttonNo {
+    position: absolute;
+    bottom: 25%;
+    right: 25%;
+}
+
+#titles {
+    position: absolute;
+    width: 18em;
+    height: 50em;
+    bottom: 0;
+    left: 50%;
+    margin-left: -9em;
+    font-size: 350%;
+    font-weight: bold;
+    text-align: justify;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(300px) rotateX(20deg);
+}
+
+#titles:after {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 60%;
+    background-image: linear-gradient(top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+#titlecontent {
+    position: absolute;
+    top: 100%;
+    animation: scroll 125s;
+}
+
+@keyframes scroll {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: -100%;
+    }
+}
+
+#buttonNext {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+
+#textOnThe2ndPage {
+    position: absolute;
+    text-align: justify;
+    top: 0%;
+    right: 5%;
+    left: 40%;
+    font-size: 18px;
+    animation: letter 2.5s;
+    display: inline-block;
+}
+
+@keyframes letter {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px)
+    }
+}
+
+#firstPerson {
+    position: fixed;
+    top: 5%;
+    left: 10%;
+    animation: image 2.5s;
+    display: inline-block;
+}
+
+@keyframes image {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px)
+    }
+}
+
+#persons {
+    position: absolute;
+    bottom: 0%;
+    left: 25%;
+    animation: imagesOfPersons 2.5s;
+    display: inline-block;
+}
+
+@keyframes imagesOfPersons {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px)
+    }
+}
+
+#buttonPrevious {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+}
+
+#questionsText {
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    left: 25%;
+    right: 25%;
+    font-size: 30px;
+}
+
+#sessionText {
+    position: absolute;
+    text-align: left;
+    bottom: 2%;
+    left: 2%;
+    font-size: 12px;
+}
